@@ -1,0 +1,27 @@
+%html{:xmlns=> "http://www.w3.org/1999/xhtml", 'xml:lang' => "en", :lang => "en"}
+  %head
+    %meta{'http-equiv' => "Content-Type", 'content' => "text/html; charset=utf-8"}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/main.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/vtip.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/navigation.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/facebox.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/jquery.autocomplete.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/ui.dropdownchecklist.css'}
+    %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/smoothness/jquery-ui.css'}
+    %script{:type => 'text/javascript', :src=> '/js/jquery.min.js'}
+    %script{:type => 'text/javascript', :src=> '/js/jquery-ui.min.js'}
+    %script{:type => 'text/javascript', :src=> '/js/jquery.autocomplete.min.js'}
+    %script{:type => 'text/javascript', :src=> '/js/vtip-min.js'}
+    %script{:type => 'text/javascript', :src=> '/js/jquery.reject.min.js'}
+    %script{:type => 'text/javascript', :src=> '/js/facebox.js'}
+    %script{:type => 'text/javascript', :src=> '/js/jquery.validate.js'}
+    %script{:type => 'text/javascript', :src=> '/js/main.js'}
+    %script{:type => 'text/javascript', :src=> '/js/ui.dropdownchecklist.js'}
+    %title SpellCaster - Abiquo
+    - if @meta_refresh
+      %meta{ "http-equiv" => "refresh", :content => "60;url=/" }
+  %body
+    .layout_header
+      .layout_header_logo
+    = yield
+

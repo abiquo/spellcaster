@@ -1,0 +1,44 @@
+REQUERIMIENTOS
+--------------
+
+Rubygems necesarias:
+
+do_sqlite3
+dm-core
+resque
+sinatra
+haml
+thin
+pony
+sqlite3-ruby
+
+system packages:
+tftp-hpa
+libsqlite3-dev
+apache2
+rubygems
+ruby
+ruby-dev
+rdoc
+ri
+
+PARA RULAR LA APP
+-----------------
+
+* Usando mod_passenger
+
+mkdir tmp
+mkdir logs
+mkdir public/graphs
+chown apache tmp logs public/graphs
+
+* Para testing/development purposes
+
+rackup -s thin
+
+
+IMPORTANTE
+----------
+
+QUEUE=default nohup rake resque:work&
+

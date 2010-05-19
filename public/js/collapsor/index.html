@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>collapsor jQuery plugin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css" media="screen">
+	 .open {
+ 	   color: #0f0;
+ 	 }
+	 
+	</style>
+	<script src="jquery-1.2.6.min.js" type="text/javascript"></script>
+	<script src="jquery.collapsor.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('ul a').collapsor();
+			$('dl strong').collapsor({sublevelElement:'dl', speed: 1000});
+		});
+	</script>
+</head>
+<body>
+	<h1>collapsor:</h1>
+	<pre>
+		/*
+		* collapsor (1.0) // 2008.04.05 // &lt;http://plugins.jquery.com/project/collapsor&gt;
+		* 
+		* REQUIRES jQuery 1.1.2+ &lt;http://jquery.com/&gt;
+		* 
+		* Copyright (c) 2008 TrafficBroker &lt;http://www.trafficbroker.co.uk&gt;
+		* Licensed under GPL and MIT licenses
+		* 
+		* collapsor opens and closes sublevel elements, like a collapsable menu
+		*
+		* We need to select the clickable elements that trigger the opening action of the sublevels: $(&#x27;#menu ul li a&#x27;).collapsor();
+		* The sublevel element must be in the same level than the triggers
+		*
+		* Sample Configuration:
+		* $(&#x27;ul a&#x27;).collapsor();
+		* 
+		* Config Options:
+		* activeClass: Class added to the element when is active // Default: &#x27;active&#x27;
+		* openClass: Class added to the element when is open // Default: &#x27;open&#x27;
+		* sublevelElement: Element that must open or close // Default: &#x27;ul&#x27;
+		* speed: Speed for the opening animation // Default: 500
+		* easing: Easing for the opening animation. Other than &#x27;swing&#x27; or &#x27;linear&#x27; must be provided by plugin // Default: &#x27;swing&#x27;
+		* 
+		* We can override the defaults with:
+		* $.fn.collapsor.defaults.speed = 1000;
+		* 
+		* @param  settings  An object with configuration options
+		* @author    Jesus Carrera &lt;jesus.carrera@trafficbroker.co.uk&gt;
+		*/
+	</pre>
+	
+	<h1>collapsor samples:</h1>
+	<pre>
+		<strong>HTML:</strong>
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#menu_1&quot;&gt;Menu 1&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;
+						&lt;a href=&quot;#menu_1_1&quot;&gt;Menu 1-1&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href=&quot;#menu_1_2&quot;&gt;Menu 1-2&lt;/a&gt;
+						&lt;ul&gt;
+							&lt;li&gt;
+								&lt;a href=&quot;#menu_1_2_1&quot;&gt;Menu 1-2-1&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li&gt;
+								&lt;a href=&quot;#menu_1_2_2&quot;&gt;Menu 1-2-2&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#menu_2&quot;&gt;Menu 2&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#menu_3&quot;&gt;Menu 3&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+		
+		<strong>JS:</strong>
+		$(&#x27;ul a&#x27;).collapsor();
+	</pre>
+	<ul>
+		<li>
+			<a href="#menu_1"><strong>Menu 1</strong></a>
+			<ul>
+				<li>
+					<a href="#menu_1_1">Menu 1-1</a>
+				</li>
+				<li>
+					<a href="#menu_1_2"><strong>Menu 1-2</strong></a>
+					<ul>
+						<li>
+							<a href="#menu_1_2_1">Menu 1-2-1</a>
+						</li>
+						<li>
+							<a href="#menu_1_2_2">Menu 1-2-2</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#menu_2">Menu 2</a>
+		</li>
+		<li>
+			<a href="#menu_3">Menu 3</a>
+		</li>
+	</ul>
+	<br /><br />
+	<pre>
+		<strong>HTML:</strong>
+		&lt;dl&gt;
+			&lt;dt&gt;
+				Level 1
+			&lt;/dt&gt;
+			&lt;dd&gt;
+				Level 1 desc
+			&lt;/dd&gt;
+			&lt;dt&gt;
+				Level 2
+			&lt;/dt&gt;
+			&lt;dd&gt;
+				&lt;strong&gt;Level 2 desc&lt;/strong&gt;
+				&lt;dl&gt;
+					&lt;dt&gt;
+						Sublevel 1
+					&lt;/dt&gt;
+					&lt;dd&gt;
+						Sublevel 1 desc
+					&lt;/dd&gt;
+				&lt;/dl&gt;
+			&lt;/dd&gt;
+		&lt;/dl&gt;
+		
+		<strong>JS:</strong>
+		$(&#x27;dl strong&#x27;).collapsor({sublevelElement:&#x27;dl&#x27;, speed: 1000});
+	</pre>
+	<dl>
+		<dt>
+			Level 1
+		</dt>
+		<dd>
+			Level 1 desc
+		</dd>
+		<dt>
+			Level 2
+		</dt>
+		<dd>
+			<strong>Level 2 desc</strong>
+			<dl>
+				<dt>
+					Sublevel 1
+				</dt>
+				<dd>
+					Sublevel 1 desc
+				</dd>
+			</dl>
+		</dd>
+	</dl>
+</body>
+</html>

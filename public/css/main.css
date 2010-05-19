@@ -1,0 +1,152 @@
+html, body {
+  background: #c4c4c4;
+  /*color: #605d5d;*/
+  color: #292929;
+  margin: 0px;
+  padding:0;
+  height: 100%;
+}
+
+.hp_title {
+	padding-top: 20px;
+	text-shadow: 0px 1px 1px #fff;
+	font-size: 32px;
+	font-weight: bold;
+}
+.shadow_text {
+  text-shadow: 0px 1px 1px #fff;
+  font-size: 32px;
+  font-weight: bold;
+  color: #292929;
+}
+
+table {
+	border-width: 0px;
+	width: 100%;
+}
+.row {
+	margin: 20px;
+}
+
+.text_label {
+	padding: 5px;
+	font-weight: bold;
+	color: #7A7A7A;
+	/*background-color: #FD820E;*/
+}
+
+td.host_form {
+	text-align: center;
+	background: white;
+	-webkit-border-top-right-radius: 5px;
+  	-webkit-border-bottom-right-radius: 5px;
+  	-moz-border-radius-topright:5px;
+  	-moz-border-radius-bottomright:5px;
+}
+
+.status_text_unknown {
+	color: white;
+	background: red;
+	font-size: 18px;
+	text-align: center;
+}
+
+.status_text {
+	color: black;
+	background: yellow;
+	font-size: 18px;
+	text-align: center;
+}
+.status_text_ready {
+    background: #00B324;
+	color: white;
+	font-size: 18px;
+	text-align: center;	
+}
+
+td.host_title {
+	width: 200px;
+	padding: 20px;
+	text-align: center;
+	background-color: #FD820E;
+	-webkit-border-top-left-radius: 5px;
+  	-webkit-border-bottom-left-radius: 5px;
+  	-moz-border-radius-topleft:5px;
+  	-moz-border-radius-bottomleft:5px;
+}
+
+td.host_status {
+	background: white;
+	vertical-align: top;
+	text-align: center;
+}
+
+.host_status span {
+	font-weight: bold;
+	font-size: 26px;
+}
+
+td{	
+	border: 0;
+
+}
+
+.host {
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+
+.layout_header { height: 91px; background: #3E3D40 url(/images/header_fdo.gif) top left repeat-x; }
+
+	
+.host_status {
+	padding: 8px;
+}
+
+.left {
+	float:left;
+	width:50%;
+}
+.right {
+	float:right;
+	width:50%;	
+}
+
+.loading_box {
+	background: white;
+	width: 400px;
+	height: 250px;
+	-webkit-border-radius: 5px;
+  	-moz-border-radius:5px;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.loading_box_spinner {
+	padding-top: 20px;
+}
+
+.loading_box_title {
+	padding-top: 20px;
+	color: #3D3D3D;
+	font-weight: bold;
+	font-size: 32px;
+}
+
+.loading_box_message {
+	padding-top: 10px;
+	color: #3D3D3D;
+	padding-bottom: 10px;
+}
+
+.content { width: 900px;}
+
+.layout_header_logo { 
+	display: block; 
+	width: 242px;
+	height: 91px; 
+	text-indent: -3500px; 
+	background: transparent url(/images/logo.gif) 55px 0px no-repeat; 
+	outline:none; 
+}

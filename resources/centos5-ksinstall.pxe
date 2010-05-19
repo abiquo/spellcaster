@@ -1,0 +1,12 @@
+default menu.c32
+prompt 0
+timeout 50
+ONTIMEOUT bootstrap
+
+MENU TITLE PXE Menu
+
+LABEL bootstrap
+        MENU LABEL centos5 bootstrap
+        KERNEL vmlinuz
+        APPEND ks=http://kickstart.bcn.abiquo.com/centos5-core.ks initrd=initrd.img ramdisk_size=300000 ksdevice=eth0 ip=dhcp
+

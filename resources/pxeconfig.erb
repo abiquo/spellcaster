@@ -1,0 +1,11 @@
+default menu.c32
+prompt 0
+timeout 50
+ONTIMEOUT <%= @pxe_menu_label %>
+
+MENU TITLE PXE Menu
+
+LABEL <%= @pxe_menu_label %>
+        MENU LABEL <%= @pxe_menu_label %>
+        KERNEL vmlinuz
+        APPEND ks=http://spellcaster.hq.abiquo.com/generated/<%= @ks_file %> initrd=initrd.img ramdisk_size=300000 ksdevice=eth0 ip=dhcp

@@ -1,0 +1,89 @@
+
+%center
+  .hp_title
+    Hypervisor Provisioning System
+  .content
+    - 4.upto(6) do |n|
+      %table
+        %thead
+        %tbody
+          .row
+            %tr
+              %td.host_title
+                .host{:id => "host_thunder0#{n}"}
+                  .shadow_text 
+                    Thunder
+                    = " 0#{n}"
+                  %img{ :src => "/images/physicalMachine.png"}
+                
+              %td.host_status
+                .text_label Current Status
+                %span
+                - if StatusTable.instance["thunder0#{n}".to_sym][:post_stage].to_i == 3 
+                  .status_text_ready
+                    = stage_string(StatusTable.instance["thunder0#{n}".to_sym][:post_stage].to_i)
+                - elsif StatusTable.instance["thunder0#{n}".to_sym][:post_stage].to_i == -1
+                  .status_text_unknown
+                    = stage_string(StatusTable.instance["thunder0#{n}".to_sym][:post_stage].to_i)
+                - else
+                  .status_text
+                    = stage_string(StatusTable.instance["thunder0#{n}".to_sym][:post_stage].to_i)
+                .text_label Current Hypervisor
+                %span
+                  = StatusTable.instance["thunder0#{n}".to_sym][:hypervisor]
+                .text_label Current Arch
+                %span
+                  = StatusTable.instance["thunder0#{n}".to_sym][:arch]
+                .text_label AIM Version
+                %span
+                  = StatusTable.instance["thunder0#{n}".to_sym][:aim_version]
+            
+              %td.host_form
+                .host_status
+    
+                  %form{:id => "thunder0#{n}", :method => 'post', :action => '/go_thunder', :class => 'form'}
+                    .form_fields
+                      %input{:type => 'hidden', :value => "thunder0#{n}", :name => "host"}
+                      %b Hypervisor
+                      %br
+                      %select{:name => 'hypervisor_type'}
+                        %option{ :value => 'xen', :selected => false }
+                          = 'Xen'
+                        %option{ :value => 'kvm', :selected => true }
+                          = 'KVM'
+                        %option{ :value => 'virtualbox', :selected => false }
+                          = 'VirtualBox'
+                      %br
+                      %b AIM Version
+                      %br
+                      %select{:name => 'aim_version'}
+                        %option{ :value => 'trunk', :selected => false }
+                          = 'Trunk'
+                        %option{ :value => '1.0-maint', :selected => true }
+                          = '1.0-maint'
+                        %option{ :value => '1.5', :selected => true }
+                          = '1.5'
+            
+                      %br
+                      %b Arch
+                      %br
+                      %select{:name => 'arch'}
+                        %option{ :value => 'i386', :selected => false }
+                          = 'i386'
+                        %option{ :value => 'x86_64', :selected => true }
+                          = 'x86_64'
+                      %br
+                      %br
+                    %b Your email
+                    %br
+                    %input{ :type => "text", :name => "email", :size => 30 }
+                    %br
+                    %span{ :style => "font-size: 10px" } I Won't send you SPAM, I promise XD
+                    %br
+                    %input{:type=>"image", :name => "submit" , :style => "border: 0; margin: 0;", :name => "submit", :src => "/images/provision_btn.png", :width=>"120", :height=>"40"}
+      
+                %form{:id => "thunder0#{n}", :method => 'post', :action => '/release_thunder', :class => 'form'}
+                  %input{:type => 'hidden', :value => "thunder0#{n}", :name => "host"}
+                  %input{:type=>"image", :style => "border: 0; margin: 0;", :name => "submit" , :src => "/images/release_btn.png", :width=>"120", :height=>"40"}
+                  
+             

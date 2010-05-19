@@ -1,0 +1,9 @@
+config/settings.rb.prod
+bin/*
+vendor
+!vendor/gems/cache/
+*DS_Store
+log/*
+public/graphs/*
+*.tmproj
+tags
